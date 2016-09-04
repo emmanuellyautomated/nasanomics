@@ -36,7 +36,6 @@ clean:
 	rm -rf $(VENV)
 	find . -iname '*.pyc' -exec rm {} \;
 	rm -rf ./vps/vagrant/nasanomics
-	redis-cli flushall
 	vagrant destroy -f
 
 venv: 
