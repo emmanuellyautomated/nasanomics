@@ -1,4 +1,5 @@
 PYTHON := python3
+FORK := emmanuellyautomated
 APP_NAME := nasanomics
 APP_FILE := app/nasanomics.py
 TEST_FILES := $(shell ls test/*_test.py)
@@ -46,7 +47,7 @@ install: requirements.txt $(VENV)
 
 dev-deploy:
 	mkdir ./vps/vagrant/$(APP_NAME)
-	git clone https://github.com/withtwoemms/$(APP_NAME).git ./vps/vagrant/$(APP_NAME)
+	git clone https://github.com/$(FORK)/$(APP_NAME).git ./vps/vagrant/$(APP_NAME)
 	cp ./.env ./vps/vagrant/$(APP_NAME)
 	vagrant up
 	
