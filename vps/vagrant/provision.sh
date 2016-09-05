@@ -17,7 +17,7 @@ export PYTHONPATH=/var/www/nasanomics
 cd /var/www/nasanomics
 sudo make venv
 source /var/www/nasanomics/venv/bin/activate
-sudo make install
+make install
 
 # UWSGI Setup
 sudo apt-get -y install uwsgi uwsgi-plugin-python3
