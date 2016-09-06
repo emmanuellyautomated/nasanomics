@@ -1,9 +1,10 @@
 cd /vagrant
-sudo echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list
-sudo apt-get -y update
 
 # Setup Filebeat
-sudo apt-get -y install apt-transport-https filebeat
+sudo apt-get -y install apt-transport-https 
+sudo echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list
+sudo apt-get -y update
+sudo apt-get -y install filebeat
 sudo wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 #---- Configure Filebeat
 
