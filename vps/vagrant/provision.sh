@@ -3,7 +3,7 @@ ssh-keygen -t rsa -N "" -f /home/vagrant/.ssh/id_rsa
 
 # Setup Filebeat
 sudo apt-get -y install apt-transport-https sshpass
-sshpass -p "vagrant" ssh-copy-id -i /home/vagrant/.ssh/id_rsa.pub vagrant@192.168.0.10  # should get from file for max secure
+sudo sshpass -p "vagrant" ssh-copy-id -i /home/vagrant/.ssh/id_rsa.pub vagrant@192.168.0.10  # should get from file for max secure
 scp -i /home/vagrant/.ssh/id_rsa vagrant@192.168.0.10:/etc/pki/tls/certs/logstash-forwarder.crt /tmp/
 sudo echo "deb https://packages.elastic.co/beats/apt stable main" |  sudo tee -a /etc/apt/sources.list.d/beats.list
 sudo apt-get -y update
